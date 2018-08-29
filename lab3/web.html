@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NITK Website</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="javas.js"></script>
+</head>
+<body>
+
+<div class="row">
+
+	<div class="column left">
+		<img src="embl.jpg" id="embl" align="left">
+	</div>
+
+	<div class="column middle">
+	<h1 id="clg_nm">National Institute of Technology Karnataka,Surathkal</h1>
+	<b>Mangalore - 575 025, Karnataka, India</b>
+	</div>
+
+	<div class="column right">
+	<pre><br>
+	<input type="text" style="height=35px;" name="key"> <button class="search">Search</button>
+	</pre>
+	</div>
+</div>
+
+	<div id="admin-button-wrapper">
+		<form class="ad_btns" action="admin_addteacher.php" method="post"><center>
+			<input type="button" id="add_teacher" value="Add Teacher"/>
+			<input type="button" id="add_course" value="Add Course"/>
+			<input type="button" id="add_student" value="Add Student"/>
+			<div class="details" action="admin_addteacher.php">
+			<button class="details-btns">View/Edit Details</button>
+			<div class="details-content" >
+			<a href="#">Student details</a><br>
+			<a href="#">Teacher details</a><br>
+			<a href="#">Course details</a>
+			</div>
+			</div>
+			<div class="reports" action="admin_addteacher.php">
+			<button class="report-btns">Reports</button>
+			<div class="report-content" >
+			<a href="#">View Attendance Report</a><br>
+			<a href="#">View Grades Report</a>
+			</div>
+			</div>
+			<div class="fdbck" action="admin_addteacher.php">
+			<button class="fdbck-btns">View Feedback</button>
+			<div class="fdbck-content" >
+			<a href="#">Teacher's Feedback</a><br>
+			<a href="#">Student's Feedback</a>
+			</div>
+			</div>
+			</center>
+		</form>
+</div>
+
+	<img src="clg_pic.jpg" id="mb" align="center">
+</body>
+</html>
