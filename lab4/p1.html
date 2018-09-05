@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Feedback</title>
+	<style>
+		#sd
+		{
+			background-color: #00cec9;
+			padding-top: 30px;
+			width: 60%;
+			border-radius: 10px;
+			border: 2px solid black;
+			padding-left: 40px;
+			padding-bottom: 40px;
+		}
+	</style>
+</head>
+<body>
+		<br>
+		<div id="sd">
+	<form id="details">
+		<label>Name</label>
+		<input type="text" id="name" name="Name"><br><br>
+		<label>City</label>
+		<input type="text" id="city" name="city"><br><br>
+		<label>Gender</label>
+		<select id="gender" name="Gender">
+			<option>Male</option>
+			<option>Female</option>
+		</select><br><br>
+		<label>Comments</label><br>
+		<textarea id="comments" name="comments" rows="10" cols="50"></textarea><br><br><br>
+	</form>
+
+	<button onclick="show_details()">Show Details</button>
+</div>
+	<script type="text/javascript">
+		function show_details() {
+			document.getElementById("det_head").innerHTML='The details entered are as follows';
+			var nm=document.getElementById('details').elements.item(0).value;
+			document.getElementById("nam").innerHTML='Name:		'+nm;
+			var ct=document.getElementById('details').elements.item(1).value;
+			document.getElementById("ct").innerHTML='City:		'+ct;
+			var gen=document.getElementById('details').elements.item(2).value;
+			document.getElementById("gen").innerHTML='Gender: 	'+gen;
+			var com=document.getElementById('details').elements.item(3).value;
+			document.getElementById("com").innerHTML='Comments: 	'+com;
+		}
+	</script>
+	<h3 id="det_head"></h3>
+	<p id="nam"></p>
+	<p id="ct"></p>
+	<p id="gen"></p>
+	<p id="com"></p>
+</body>
+</html>

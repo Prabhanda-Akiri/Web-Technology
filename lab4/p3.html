@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guest Book</title>
+	<style>
+		#gb
+		{
+			background-color: #00cec9;
+			padding-top: 30px;
+			width: 60%;
+			border-radius: 10px;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div id="gb">
+	<pre>
+		<form name="myForm" method="post">
+		<br>
+		First Name:   <input type="text" name="fname" id="fname" required><br>
+		Last Name:    <input type="text" name="lname" id="lname" required><br>
+		Email-ID:     <input type="text" name="eid" id="eid" required><br>
+		Sex:<div id="sex">                                <input type="radio" name="gender" value="Male" required>Male   <input type="radio" name="gender" value="Female">Female<br></div>
+		Comments:
+		<textarea rows="5" cols="50" required></textarea><br>
+		<button type="button" onclick="validateForm()">Submit</form></pre>
+	</div>
+	<script>
+		function validateForm() {
+			// body...
+			var fname,lname,eid,sex,comm;
+
+			fname=document.getElementById("fname").value;
+			if(fname.length>20)
+				alert("Enter the First Name with a maximum of 20 characters");
+
+			lname=document.getElementById("lname").value;
+			if(lname.length>20)
+				alert("Enter the Last Name with a maximum of 20 characters");
+
+			eid=document.getElementById("eid").value;
+			if(!(eid.endsWith(".com")))
+				alert("Enter a valid Email-ID");
+
+			sex=document.getElementById("sex").value;
+			comm=document.getElementById("comm").value;
+		}
+	</script>
+</body>
+</html>

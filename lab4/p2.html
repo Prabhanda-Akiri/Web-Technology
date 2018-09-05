@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NITK Gallery</title>
+	<script>
+    var images = ['p2i1.jpeg','p2i2.jpeg','p2i3.jpeg','p2i4.jpeg'];
+    var index = 0;
+
+    function buildImage() {
+      var img = document.createElement('img')
+      img.src = images[index];
+      document.getElementById('content').appendChild(img);
+    }
+
+    function changeImage(){
+      var img = document.getElementById('content').getElementsByTagName('img')[0]
+      index++;
+      index = index % images.length; // This is for if this is the last image then goto first image
+      img.src = images[index];
+    }
+</script>
+</head>
+<body>
+		<h2>NITK Campus Gallery</h2>
+		<p>National Institute of Technology Karnataka (NITK), formerly known as Karnataka Regional Engineering College (KREC), also known as NIT Surathkal, is a public engineering university at Surathkal, Mangalore. It was founded in 1960 as KREC while today, it is one of the 31 National Institutes of Technology in India and is recognised as an Institute of National Importance by the Government of India. It has a suburban campus, in close proximity to the Arabian Sea. National Highway 66 runs through the campus and serves as the major mode of access. </p>
+
+		<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 4</div>
+    <img src="p2i1.jpeg" style="width:50%">
+    <div class="text">Main Building</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 4</div>
+    <img src="p2i2.jpeg" style="width:50%">
+    <div class="text">Mega Towers</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 4</div>
+    <img src="p2i3.jpeg" style="width:50%">
+    <div class="text">LHC-C</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="p2i4.jpeg" style="width:50%">
+    <div class="text">NITK Beach</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)"><u>prev</u></a>
+  <a class="next" onclick="plusSlides(1)"><u>next</a></u>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+
+</div>
+
+<script>
+	var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>
